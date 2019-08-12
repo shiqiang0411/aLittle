@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+<div id="box">
+    <p><span>账号：</span><input type="text" id="userName" /></p>
+    <p><span>密码：</span><input type="password" id="password" /></p>
+    <p><input type="button" value="登录" id="btnLogin" /></p>
+</div>
+<script>
+    $(function () {
+        $('#btnLogin').click(function () {
+            var data = { };
+            data.userName = document.getElementById("userName").value;
+            data.password = document.getElementById("password").value;
+            $.ajax({
+                url: "/Home/UserLogin",
+                type: "post",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    alert(data.success);
+                }
+            })
+        });
+    })
+</script>

@@ -18,14 +18,14 @@ namespace EFData
         public DTcmsdb5Entities()
             : base("name=DTcmsdb5Entities")
         {
-            
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            throw new UnintentionalCodeFirstException();
         }
     
         public DbSet<dt_users> dt_users { get; set; }
+        public DbSet<dt_manager> dt_manager { get; set; }
     }
 }
