@@ -32,7 +32,7 @@ namespace Web.UI.Controllers
         [HttpPost]
         public JsonResult UserLogin(LoginRequestVO vo)
         {
-            EFData.dt_users dt = new EFData.DBHelper().GetUser(vo);
+            dt_manager dt = new DBHelper().GetUser(vo);
             Dictionary<string, string> ret = new Dictionary<string, string>();
             ret.Add("message", dt == null ? "登录失败" : "登录成功");
             ret.Add("success", "200");

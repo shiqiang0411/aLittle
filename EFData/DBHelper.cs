@@ -9,9 +9,9 @@ namespace EFData
 {
     public class DBHelper : EF
     {
-        public dt_users GetUser(LoginRequestVO vo)
+        public dt_manager GetUser(LoginRequestVO vo)
         {
-            var data = DbContextRead.dt_users.Where(i => i.user_name.Equals(vo.UserName)).FirstOrDefault();
+            var data = DbContextRead.dt_manager.Where(i => i.user_name.Equals(vo.UserName)).FirstOrDefault();
             if (null != data)
             {
                 string key = data.salt;
